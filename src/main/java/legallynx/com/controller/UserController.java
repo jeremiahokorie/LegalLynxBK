@@ -3,6 +3,7 @@ package legallynx.com.controller;
 
 import legallynx.com.impl.UserServiceImpl;
 import legallynx.com.models.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @Controller
 @RestController
+@Slf4j
 @RequestMapping("v1/api/user")
 public class UserController {
 
@@ -26,6 +28,7 @@ public class UserController {
 
     @GetMapping("/")
     public List<User> get(){
+        log.info("Logging for errors");
         return userService.getAllUser();
     }
 
